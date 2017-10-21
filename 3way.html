@@ -1,24 +1,25 @@
-<html ng-app="meuApp" ng-controller="Ctrl">
+<html ng-app="myApp" ng-controller="Ctrl">
 <head><meta charset="utf-8"></meta></head>
-<input type="text" ng-model="data.nome" placeholder="Digite seu nome"/>
-<h1>Meu nome é: <span ng-bind="data.nome"></span></h1>
+<input type="text" ng-model="data.nome" placeholder="Type you name"/>
+<h1>My name is: <span ng-bind="data.nome"></span></h1>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
 <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
 <script>
 var config = {
-    apiKey: "AIzaSyBX4t1yJBgkaE-Xogr64-bidakD9DBjpHg",
-    authDomain: "dwarf.firebaseapp.com",
-    databaseURL: "https://dwarf.firebaseio.com",
-    storageBucket: "project-4755376943519591015.appspot.com",
-    messagingSenderId: "960637009294"
+	apiKey: "AIzaSyDDwMiOoSrmRTQZBR6QrFqwvtr_eXM8ELE",
+    authDomain: "webguide.firebaseapp.com",
+    databaseURL: "https://webguide.firebaseio.com",
+    projectId: "firebase-webguide",
+    storageBucket: "firebase-webguide.appspot.com",
+    messagingSenderId: "1089069256449"
 };
 firebase.initializeApp(config);
 </script>
 <script>
-angular.module('meuApp', ['firebase'])
+angular.module('myApp', ['firebase'])
 .controller('Ctrl', function($scope, $firebaseObject) {
-    var ref = firebase.database().ref().child('data');
+    var ref = firebase.database().ref().child('3way');
     $firebaseObject(ref).$bindTo($scope, 'data');
 });
 </script>
